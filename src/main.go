@@ -1,7 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"learn/src/server"
+)
 
 func main() {
-	fmt.Println("Go Learn")
+	fmt.Println("Starting the main program...")
+	server.StartServer()
 }

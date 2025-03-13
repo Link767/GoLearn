@@ -12,11 +12,11 @@ func hendler(w http.ResponseWriter, r *http.Request) {
 
 func StartServer() {
 	// Регистрация обработчика на маршрут "/"
-	http.HandleFunc("/", hendler)
+	http.HandleFunc("/localhost", hendler) //http://localhost:8082/localhost - путь до сервера, если оставить "/" будет просто http://localhost:8082
 
 	// Запуск сервера на порту 8080
 	fmt.Println("Server is running on port 8080...")
-	err := http.ListenAndServe(":8080", nil)
+	err := http.ListenAndServe(":8082", nil) // порт который надо слушать
 	if err != nil {
 		fmt.Println("Error starting server: ", err)
 	}
